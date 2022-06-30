@@ -1,0 +1,13 @@
+<%-*  let filetype = await tp.system.suggester(["Template Folder", "System Folder", "Snippet Folder"], ["Template Folder", "System Folder", "Snippet Folder"], false, "Which template do you want to use?") 
+if (filetype === "Template Folder") { 
+myFilePath = "/10 Templates/" +  tp.file.title;
+await tp.file.move(`${myFilePath}`);
+} else if (filetype === "Snippet Folder") { 
+myFilePath = "/10 Templates/06 Helpul Snippets/" +  tp.file.title;
+await tp.file.move(`${myFilePath}`);
+} else if (filetype === "System Folder") {
+myFilePath = "/00 System/" +  tp.file.title;
+await tp.file.move(`${myFilePath}`);
+} else { 
+tp.file.cursor(1)
+} -%>
